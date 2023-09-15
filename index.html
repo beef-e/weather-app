@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="static/css/style.scss">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
-  <body>
-	<div class="hero">
-		<div class="content">
-			<h1>Weather App</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="ie=edge" />
+		<title>Weather App</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous" />
+		<link
+			rel="stylesheet"
+			href="static/css/style.css" />
+	</head>
+	<body>
+		<div class="hero">
+			<div class="content">
+				<h1>Weather App</h1>
 
-			<h2>Entirely built using NeoVim! (And it also tells you the weather)</h2>
-		</div>
-
-	<form>
-		<div class="data">
-			<div class="field">
-				<label for="longitude">Longitude</label>
-				<input type="number" name="longitude" id="longitude" placeholder="Insert your city Longitude">
+				<h2>Entirely built using NeoVim! (And it also tells you the weather)</h2>
 			</div>
 
-			<div class="field">
-				<label for="latitude">Latitude</label>
-				<input type="number" name="latitude" id="latitude" placeholder="Insert your city Latitude">
-			</div>
+			<form>
+				<div class="data">
+					<div class="field">
+						<label for="longitude">Longitude</label>
+						<input
+							type="number"
+							name="longitude"
+							id="longitude"
+							placeholder="Insert your city Longitude" />
+					</div>
+
+					<div class="field">
+						<label for="latitude">Latitude</label>
+						<input
+							type="number"
+							name="latitude"
+							id="latitude"
+							placeholder="Insert your city Latitude" />
+					</div>
+				</div>
+
+				<div class="buttons">
+					<button
+						type="reset"
+						value="Reset">
+						Reset
+					</button>
+					<button type="submit">Submit</button>
+				</div>
+			</form>
 		</div>
 
-		<div class="buttons">
-			<button type="reset" value="Reset">Reset</button>
-			<button type="submit">Submit</button>
-		</div>
-	</form>
-
-
-	</div>	
-
-
-	<script src="static/js/index.js"></script>
-  </body>
+		<script src="static/js/index.js"></script>
+	</body>
 </html>
