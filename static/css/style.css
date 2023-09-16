@@ -6,3 +6,8 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+#map { 
+	height: 300px; 
+	width: 720px;
+}
