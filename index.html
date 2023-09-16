@@ -19,16 +19,16 @@
 			href="static/css/style.css" />
 	</head>
 	<body>
-		<div class="hero">
-			<div class="content">
+		<div class="hero d-flex justify-content-center align-items-center flex-column">
+			<div class="content text-center text-white">
 				<h1>Weather App</h1>
 
 				<h2>Entirely built using NeoVim! (And it also tells you the weather)</h2>
 			</div>
 
 			<form>
-				<div class="data">
-					<div class="field">
+				<div class="data text-center text-white">
+					<div class="field flex-fill">
 						<label for="longitude">Longitude</label>
 						<input
 							type="number"
@@ -37,7 +37,7 @@
 							placeholder="Insert your city Longitude" />
 					</div>
 
-					<div class="field">
+					<div class="field flex-fill">
 						<label for="latitude">Latitude</label>
 						<input
 							type="number"
@@ -47,13 +47,14 @@
 					</div>
 				</div>
 
-				<div class="buttons">
+				<div class="buttons d-flex justify-content-center">
 					<button
 						type="reset"
-						value="Reset">
+						value="Reset"
+						class="btn btn-light">
 						Reset
 					</button>
-					<button type="submit">Submit</button>
+					<button type="submit" class="btn btn-success">Submit</button>
 				</div>
 			</form>
 		</div>
