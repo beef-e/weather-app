@@ -37,6 +37,10 @@ form.addEventListener("submit", function(e){
 			const meteo = data.hourly
 			console.log(meteo.temperature_2m)
 		})
+		.then(function(data){
+			document.querySelector(".wrapper").classList.add("hidden")
+			document.querySelector("#chartDiv").classList.remove("hidden")
+		})
 
 		.catch(function(e){
 			console.log("An Error occurred: " + e)

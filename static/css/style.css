@@ -11,3 +11,11 @@
 	height: 300px; 
 	width: 720px;
 }
+
+.wrapper{
+	height: 100%;
+}
+
+.hidden{
+	display: none !important;
+}

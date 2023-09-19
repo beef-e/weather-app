@@ -20,49 +20,56 @@
 			href="static/css/style.css" />
 	</head>
 	<body>
-		<div class="hero d-flex justify-content-center align-items-center flex-column">
-			<div class="content text-center text-white">
-				<h1>Weather App</h1>
+		<div class="hero">
+			<div class="wrapper d-flex justify-content-center align-items-center flex-column">
+				<div class="content text-center text-white">
+					<h1>Weather App</h1>
 
-				<h2>Entirely built using NeoVim! (And it also tells you the weather)</h2>
+					<h2>Entirely built using NeoVim! (And it also tells you the weather)</h2>
+				</div>
+
+			 	<div id="map"></div>
+
+				<form>
+					<div class="data text-center text-white d-flex flex-column justify-content-around">
+						<div class="field mt-2">
+							<label for="longitude">Longitude</label>
+							<input
+								type="number"
+								name="longitude"
+								id="longitude"
+								placeholder="Insert your city Longitude" />
+						</div>
+
+						<div class="field mt-2">
+							<label for="latitude">Latitude</label>
+							<input
+								type="number"
+								name="latitude"
+								id="latitude"
+								placeholder="Insert your city Latitude" />
+						</div>
+					</div>
+
+					<div class="buttons d-flex justify-content-center mt-2">
+						<button
+							type="reset"
+							value="Reset"
+							class="btn btn-light">
+							Reset
+						</button>
+						<button type="submit" class="btn btn-success">Submit</button>
+					</div>
+				</form>
 			</div>
 
-			 <div id="map"></div>
-
-			<form>
-				<div class="data text-center text-white d-flex flex-column justify-content-around">
-					<div class="field mt-2">
-						<label for="longitude">Longitude</label>
-						<input
-							type="number"
-							name="longitude"
-							id="longitude"
-							placeholder="Insert your city Longitude" />
-					</div>
-
-					<div class="field mt-2">
-						<label for="latitude">Latitude</label>
-						<input
-							type="number"
-							name="latitude"
-							id="latitude"
-							placeholder="Insert your city Latitude" />
-					</div>
-				</div>
-
-				<div class="buttons d-flex justify-content-center mt-2">
-					<button
-						type="reset"
-						value="Reset"
-						class="btn btn-light">
-						Reset
-					</button>
-					<button type="submit" class="btn btn-success">Submit</button>
-				</div>
-			</form>
+			<div id="chartDiv" class="hidden">
+				<canvas id="myChart"></canvas>
+			</div>
 		</div>
 
 		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<script src="static/js/index.js"></script>
 	</body>
 </html>
