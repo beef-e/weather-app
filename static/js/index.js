@@ -3,6 +3,7 @@ let long = document.querySelector("#longitude")
 let lat = document.querySelector("#latitude")
 let form = document.querySelector("form")
 
+var gmarker;
 var map = L.map('map').setView([51.505, -0.09], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -13,7 +14,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 map.on('click', function (e) {
 	console.log(e);
 
+	if(gmarker){
+		gmarker.remove()
+	}
+	
 	var marker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+	gmarker=marker
+	lat.value=e.latlng.lat;
+	long.value=e.latlng.lng;
 });
 
 /*
