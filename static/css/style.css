@@ -7,15 +7,20 @@
 	background-position: center;
 }
 
-#map { 
-	height: 300px; 
+#map {
+	height: 300px;
 	width: 720px;
 }
 
-.wrapper{
+.wrapper {
 	height: 100%;
 }
 
-.hidden{
+.hidden {
 	display: none !important;
+}
+
+#myChart {
+	width: 900px !important;
+	height: 450px !important;
 }
