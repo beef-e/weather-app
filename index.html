@@ -28,6 +28,10 @@
 					<h2>Entirely built using NeoVim! (And it also tells you the weather)</h2>
 				</div>
 
+				<div id="chartDiv" class="hidden">
+					<canvas id="myChart"></canvas>
+				</div>
+
 			 	<div id="map"></div>
 
 				<form>
@@ -35,7 +39,7 @@
 						<div class="field mt-2">
 							<label for="longitude">Longitude</label>
 							<input
-								type="number"
+								type="text"
 								name="longitude"
 								id="longitude"
 								placeholder="Insert your city Longitude" />
@@ -44,7 +48,7 @@
 						<div class="field mt-2">
 							<label for="latitude">Latitude</label>
 							<input
-								type="number"
+								type="text"
 								name="latitude"
 								id="latitude"
 								placeholder="Insert your city Latitude" />
@@ -63,9 +67,6 @@
 				</form>
 			</div>
 
-			<div id="chartDiv" class="hidden">
-				<canvas id="myChart"></canvas>
-			</div>
 		</div>
 
 		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
