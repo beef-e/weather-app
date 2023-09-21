@@ -61,13 +61,17 @@ form.addEventListener('submit', function (e) {
 function creaGrafico(data) {
 	const ctx = document.getElementById('myChart');
 
-	var dati = data.hourly.temperature_2m; //array di dati
+	var dati = data.hourly.temperature_2m; //array di temperature
 	var labels = data.hourly.time; //array di labels
+	var apparent = data.hourly.apparent_temperature; // array di temperature percepite
+	var humidity = data.hourly.relativehumidity_2m; // array di umidità
 
 	const mappedData = dati.map(function (element, index) {
 		return {
 			time: labels[index],
 			temp: element,
+			apparent: apparent[index],
+			hum: humidity[index],
 		};
 	});
 
@@ -78,11 +82,15 @@ function creaGrafico(data) {
 	console.log(filteredData);
 
 	let temperatures = [];
+	let appTemp = [];
+	let hum = [];
 	let times = [];
 
 	for (let i = 0; i < filteredData.length; i++) {
 		temperatures.push(filteredData[i].temp);
 		times.push(filteredData[i].time);
+		appTemp.push(filteredData[i].apparent);
+		hum.push(filteredData[i].hum);
 	}
 
 	for (let i = 0; i < times.length; i++) {
@@ -103,7 +111,43 @@ function creaGrafico(data) {
 					borderColor: 'rgb(75, 192, 192)',
 					tension: 0.1,
 				},
+				{
+					label: 'Apparent Temperature',
+					data: appTemp,
+					fill: true,
+					borderColor: 'rgb(214, 140, 69)',
+					tension: 0.1,
+				},
+				{
+					label: 'Relative humidity',
+					data: hum,
+					fill: true,
+					borderColor: 'rgb(124, 54, 38)',
+					tension: 0.1,
+					yAxisID: 'y1',
+				},
 			],
+			options: {
+				scales: {
+					y: {
+						type: 'linear',
+						display: true,
+						position: 'left',
+					},
+
+					y1: {
+						type: 'linear',
+						display: true,
+						position: 'right',
+					},
+
+					y2: {
+						type: 'linear',
+						display: true,
+						position: 'left',
+					},
+				},
+			},
 		},
 	});
 }
